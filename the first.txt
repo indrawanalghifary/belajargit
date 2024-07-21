@@ -24,3 +24,30 @@ ssh-add ~/.ssh/id_rsa   #this is your private key
 cat ~/.ssh/id_rsa.pub   # copy the output of this command. this is your SSH public key
 curl -u USERNAME:PASSWORD https://api.github.com/user/keys -d '{"title":"KEY_NAME", "key":"YOUR_RSA_PUBLIC_KEY_HERE"}'   #the value you copied earlier and your keyname. I recommend using a combination of machine name and app (My-laptop (Git CLI)
 git push -u origin master
+
+##########################################
+
+I think instead of SSH , This Might also Works Fine!!
+
+curl https://api.github.com/user/repos?access_token=myAccessToken -d '{"name":"REPO ANME"}'
+
+If you Don't have an Access Token You could Just go to Git Hub Settings > Developer Settings > Personal Access Tokens and Get your Token Replace that in the Curl Command.
+
+git remote set-url origin https://github.com/user name/Repo name.git
+
+git remote add origin https://github.com/user name/repo name.git
+
+git push -u origin main
+
+#######################################
+
+if error
+git remote rm origin
+git remote add origin
+
+cek
+git remote -v
+
+error: src refspec master does not match any
+git commit -m "initial commit"
+git push origin main
